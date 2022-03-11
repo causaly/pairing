@@ -14,7 +14,7 @@ Number pairing functions with support for BigInt numbers.
 ## Installation
 
 ```bash
-npm install pairings
+npm install pairing
 ```
 
 #### Requirements
@@ -24,7 +24,7 @@ npm install pairings
 ## Quick start
 
 ```typescript
-import { elegant } from 'pairings';
+import { elegant } from 'pairing';
 
 // encode bigint numbers
 const z = elegant.encode(3037000499n, 2891526307n); // returns 9223372036854775807n
