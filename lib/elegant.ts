@@ -71,14 +71,11 @@ function decode(z: unknown): unknown {
       throw new TypeError('Invalid argument; negative numbers are not allowed');
     }
 
-    // calculate square root of z
     const zSqrt = Math.sqrt(z);
-    // calculate floor of zSqrt
     const zSqrtFloor = Math.floor(zSqrt);
-    // calculate zSqrtFloor * zSqrtFloor
     const zSqrtFloorSqr = zSqrtFloor * zSqrtFloor;
-    // calculate z - zSqrtFloorSqr
     const zMinusZSqrtFloorSqr = z - zSqrtFloorSqr;
+
     // take cases
     if (zMinusZSqrtFloorSqr < zSqrtFloor) {
       return [zMinusZSqrtFloorSqr, zSqrtFloor];
@@ -93,12 +90,11 @@ function decode(z: unknown): unknown {
       throw new TypeError('Invalid argument; negative numbers are not allowed');
     }
 
-    // calculate square root of z (already floored)
     const zSqrt = sqrt(z);
-    // calculate zSqrt * zSqrt
+    // note: zSqrt is already floored, bigint does not support floats (dah!)
     const zSqrtSqr = zSqrt * zSqrt;
-    // calculate z - zSqrtSqr
     const zMinusZSqrtSqr = z - zSqrtSqr;
+
     // take cases
     if (zMinusZSqrtSqr < zSqrt) {
       return [zMinusZSqrtSqr, zSqrt];
