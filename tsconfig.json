@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outDir": "./build/types",
+    "rootDir": "./lib",
+    "esModuleInterop": true,
+    "target": "es2020",
+    "moduleResolution": "node",
+    "resolveJsonModule": true
+  },
+  "include": [
+    "./lib/**/*"
+  ],
+  "exclude": [
+    "./lib/**/*.spec.ts",
+    "./lib/**/*.test.ts"
+  ]
+}
