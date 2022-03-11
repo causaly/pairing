@@ -1,5 +1,0 @@
----
-'pairing': patch
----
-
-Publish package
