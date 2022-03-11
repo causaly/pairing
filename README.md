@@ -1,4 +1,4 @@
-# Elegant Pairing
+# Pairing
 
 Number pairing functions with support for BigInt numbers.
 
