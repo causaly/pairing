@@ -3654,6 +3654,11 @@ npm-run-path@^4.0.1:
   dependencies:
     path-key "^3.0.0"
 
+number-pairings@^1.7.5:
+  version "1.7.5"
+  resolved "https://registry.yarnpkg.com/number-pairings/-/number-pairings-1.7.5.tgz#0ff2085cb298cfd3998183c09df086d3351a793d"
+  integrity sha512-oGOi9DhgK0ALbbH5Wn63J+2vzyZe2Z8Skl8pApB2h/Y8W1T2EJt8sYA8X21aMZhq5Uhwc868vYztp+A0W0+Qag==
+
 nwsapi@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/nwsapi/-/nwsapi-2.2.0.tgz#204879a9e3d068ff2a55139c2c772780681a38b7"
