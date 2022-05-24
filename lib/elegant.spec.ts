@@ -1,3 +1,6 @@
+//@ts-ignore
+import { elegant as npElegant } from 'number-pairings';
+
 import bigIntFixtures from '../fixtures/elegant-bigint.json';
 import numberFixtures from '../fixtures/elegant-number.json';
 import { elegant } from './elegant';
@@ -65,6 +68,16 @@ describe('elegant', () => {
       // plain numbers should work as well
       numberFixtures.forEach(([x, y, expected]) => {
         expect(elegant.encode(BigInt(x), BigInt(y))).toEqual(BigInt(expected));
+      });
+    });
+
+    describe('compare with number-pairings', () => {
+      const pairFunc = npElegant();
+
+      test('yields similar results', () => {
+        expect(pairFunc.join(25202, 165032)).toBe(
+          elegant.encode(25202, 165032)
+        );
       });
     });
   });
