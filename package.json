@@ -35,6 +35,7 @@
         "import": "./build/node/esm/index.js",
         "require": "./build/node/cjs/index.js"
       },
+      "types": "./build/types/index.d.ts",
       "default": "./build/browser/esm/index.js"
     }
   },
@@ -48,13 +49,13 @@
     "build:node-cjs": "swc lib --config-file ./config/swc.node.cjs.json -d build/node/cjs",
     "build:node-esm": "swc lib --config-file ./config/swc.node.esm.json -d build/node/esm",
     "build:browser-esm": "swc lib --config-file ./config/swc.browser.esm.json -d ./build/browser/esm",
-    "build": "rimraf build && concurrently \"tsc -p ./tsconfig.json\" \"yarn build:node-cjs\" \"yarn build:node-esm\" \"yarn build:browser-esm\"",
+    "build": "rimraf build && concurrently \"tsc -p ./tsconfig.json\" \"npm run build:node-cjs\" \"npm run build:node-esm\" \"npm run build:browser-esm\"",
     "lint": "eslint lib --ext .ts",
     "format": "prettier --config ./.prettierrc --ignore-path .gitignore -w .",
     "test": "jest --config ./config/jest.config.ts",
     "coverage": "jest --config ./config/jest.config.ts --coverage",
     "changeset": "changeset",
-    "prerelease": "yarn build",
+    "prerelease": "npm run build",
     "release": "changeset publish"
   },
   "husky": {
