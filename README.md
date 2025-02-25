@@ -19,7 +19,7 @@ npm install pairing
 
 #### Requirements
 
-- Node.js v.14+
+- Node.js v.22+
 
 ## Quick start
 
