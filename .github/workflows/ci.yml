@@ -38,8 +38,8 @@ jobs:
 
       - uses: actions/cache@v4
         with:
-          path: '**/build'
-          key: ${{ runner.os }}-build-${{ github.sha }}
+          path: '**/dist'
+          key: ${{ runner.os }}-dist-${{ github.sha }}
 
       - name: Install dependencies
         if: steps.npm-cache.outputs.cache-hit != 'true'
@@ -68,8 +68,31 @@ jobs:
 
       - uses: actions/cache@v4
         with:
-          path: '**/build'
-          key: ${{ runner.os }}-build-${{ github.sha }}
+          path: '**/dist'
+          key: ${{ runner.os }}-dist-${{ github.sha }}
 
       - name: Run tests
         run: npm run test
+
+  test-deno:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        deno: ['v1.x', 'v2.x']
+    name: test:deno(${{ matrix.deno }})
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/cache@v4
+        id: npm-cache
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json', '.nvmrc') }}
+
+      - uses: denoland/setup-deno@v1
+        with:
+          deno-version: ${{ matrix.deno }}
+      - run: deno --version
+      - run: deno run ./index.ts
+        working-directory: ./lib

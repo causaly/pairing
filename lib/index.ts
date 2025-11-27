@@ -1,1 +1,1 @@
-export { elegant } from './elegant';
+export { elegant } from './elegant.ts';

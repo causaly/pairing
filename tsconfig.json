@@ -1,19 +1,17 @@
 {
   "compilerOptions": {
-    "emitDeclarationOnly": true,
+    "allowImportingTsExtensions": true,
     "declaration": true,
-    "outDir": "./build/types",
-    "rootDir": "./lib",
+    "emitDeclarationOnly": true,
+    "erasableSyntaxOnly": true,
     "esModuleInterop": true,
-    "target": "es2020",
-    "moduleResolution": "node",
-    "resolveJsonModule": true
+    "lib": ["esnext", "dom"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "removeComments": true,
+    "strict": true,
+    "target": "esnext",
+    "types": ["vitest/globals"]
   },
-  "include": [
-    "./lib/**/*"
-  ],
-  "exclude": [
-    "./lib/**/*.spec.ts",
-    "./lib/**/*.test.ts"
-  ]
+  "include": ["./lib/**/*.ts"]
 }
