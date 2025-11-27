@@ -1,3 +1,4 @@
+import { describe, test, expect } from 'vitest';
 import bigIntFixtures from '../fixtures/elegant-bigint.json';
 import numberFixtures from '../fixtures/elegant-number.json';
 import { elegant } from './elegant.ts';
