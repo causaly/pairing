@@ -1,5 +1,11 @@
 # pairing
 
+## 0.2.1
+
+### Patch Changes
+
+- 563736e: Better Node/ESM support.
+
 ## 0.2.0
 
 ### Minor Changes
