@@ -90,7 +90,8 @@ function decode(z: unknown): unknown {
       throw new TypeError('Invalid argument; negative numbers are not allowed');
     }
 
-    const zSqrt = sqrt(z);
+    // note: sqrt() returns null for negative numbers only, which is ruled out above
+    const zSqrt = sqrt(z) as bigint;
     // note: zSqrt is already floored, bigint does not support floats (dah!)
     const zSqrtSqr = zSqrt * zSqrt;
     const zMinusZSqrtSqr = z - zSqrtSqr;
